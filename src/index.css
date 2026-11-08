@@ -1,0 +1,310 @@
+@import "tailwindcss";
+
+:root, html[data-theme='dark'], html.dark {
+  --bg-canvas: #0d0d0d;
+  --bg-card: #222222;
+  --bg-card-hover: #282828;
+  --bg-modal: #1e1e1e;
+  --bg-input: #171717;
+  --bg-inner: #1a1a1a;
+  --bg-island: rgba(34, 34, 34, 0.95);
+  --modal-backdrop: rgba(0, 0, 0, 0.75);
+  --border-subtle: #333333;
+  --border-card: #333333;
+  --border-input: #383838;
+  --border-hover: #4a4a4a;
+  --text-primary: #ededed;
+  --text-secondary: #a3a3a3;
+  --text-muted: #737373;
+  --accent: #ffc928;
+  --accent-hover: #e2a900;
+  --accent-active: #c58f00;
+  --accent-subtle: rgba(255, 201, 40, 0.15);
+  --accent-border: rgba(255, 201, 40, 0.38);
+  --accent-text: #ffe58d;
+  --btn-primary-bg: #ffc928;
+  --btn-primary-text: #18140a;
+  --btn-primary-hover: #dbab1a;
+  --badge-bg: rgba(255, 201, 40, 0.12);
+  --badge-border: rgba(255, 201, 40, 0.34);
+  --badge-text: #ffe58d;
+  --scrollbar-track: #0d0d0d;
+  --scrollbar-thumb: #2a2a2a;
+  --scrollbar-thumb-hover: #ffc928;
+
+  /* NexaVerse Brand Theme Variables */
+  --background: #0d0d0d;
+  --main-theme: #ffc928;
+  --theme-alt: #c58f00;
+  --secondary: #171717;
+  --thirdy: #222222;
+  --border: #333333;
+  --border-alpha: #4a4a4a;
+  --text-color: #ededed;
+  --text-alt-color: #a3a3a3;
+  --s-main-theme: #ffe58d;
+}
+
+/* 2. Aydınlık Mod (Light) - User Specified Palette */
+html[data-theme='light'], html.light {
+  --bg-canvas: #f4f4f5;
+  --bg-card: #ffffff;
+  --bg-card-hover: #fafafa;
+  --bg-modal: #ffffff;
+  --bg-input: #f4f4f5;
+  --bg-inner: #f1f1f4;
+  --bg-island: rgba(255, 255, 255, 0.96);
+  --modal-backdrop: rgba(0, 0, 0, 0.45);
+  --border-subtle: #e4e4e7;
+  --border-card: #e4e4e7;
+  --border-input: #d4d4d8;
+  --border-hover: #a1a1aa;
+  --text-primary: #09090b;
+  --text-secondary: #52525b;
+  --text-muted: #71717a;
+  --accent: #ffc928;
+  --accent-hover: #e2a900;
+  --accent-active: #c58f00;
+  --accent-subtle: rgba(255, 201, 40, 0.09);
+  --accent-border: rgba(255, 201, 40, 0.3);
+  --accent-text: #735000;
+  --btn-primary-bg: #ffc928;
+  --btn-primary-text: #18140a;
+  --btn-primary-hover: #e2a900;
+  --badge-bg: rgba(255, 201, 40, 0.12);
+  --badge-border: rgba(255, 201, 40, 0.34);
+  --badge-text: #735000;
+  --scrollbar-track: #f4f4f5;
+  --scrollbar-thumb: #d4d4d8;
+  --scrollbar-thumb-hover: #ffc928;
+
+  /* NexaVerse Brand Theme Variables */
+  --background: #f4f4f5;
+  --main-theme: #ffc928;
+  --theme-alt: #c58f00;
+  --secondary: #ffffff;
+  --thirdy: #e4e4e7;
+  --border: #e4e4e7;
+  --border-alpha: #d4d4d8;
+  --text-color: #09090b;
+  --text-alt-color: #71717a;
+  --s-main-theme: #735000;
+}
+
+/* 3. Amoled Mod (OLED Pure Black) */
+html[data-theme='amoled'], html.amoled {
+  --bg-canvas: #000000;
+  --bg-card: #09090b;
+  --bg-card-hover: #121215;
+  --bg-modal: #08080a;
+  --bg-input: #0c0c0e;
+  --bg-inner: #050506;
+  --bg-island: rgba(10, 10, 10, 0.96);
+  --modal-backdrop: rgba(0, 0, 0, 0.85);
+  --border-subtle: #27272a;
+  --border-card: #27272a;
+  --border-input: #27272a;
+  --border-hover: #3f3f46;
+  --text-primary: #ededed;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
+  --accent: #ffc928;
+  --accent-hover: #e2a900;
+  --accent-active: #c58f00;
+  --accent-subtle: rgba(255, 201, 40, 0.15);
+  --accent-border: rgba(255, 201, 40, 0.38);
+  --accent-text: #ffe58d;
+  --btn-primary-bg: #ffc928;
+  --btn-primary-text: #18140a;
+  --btn-primary-hover: #dbab1a;
+  --badge-bg: rgba(255, 201, 40, 0.12);
+  --badge-border: rgba(255, 201, 40, 0.34);
+  --badge-text: #ffe58d;
+  --scrollbar-track: #000000;
+  --scrollbar-thumb: #1f1f23;
+  --scrollbar-thumb-hover: #ffc928;
+
+  /* NexaVerse Brand Theme Variables */
+  --background: #000000;
+  --main-theme: #ffc928;
+  --theme-alt: #c58f00;
+  --secondary: #0c0c0e;
+  --thirdy: #171717;
+  --border: #27272a;
+  --border-alpha: #3f3f46;
+  --text-color: #ededed;
+  --text-alt-color: #a1a1aa;
+  --s-main-theme: #ffe58d;
+}
+
+@layer base {
+  body {
+    font-family: 'Figtree', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Custom scrollbar using theme variables */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+/* Subtle Grid Background */
+.capsule-grid, .gama-grid {
+  background-image: radial-gradient(var(--accent-subtle) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+@keyframes fade-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.motion-ready .motion-enter {
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+.motion-ready .motion-enter.is-visible {
+  animation: fade-rise 560ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.motion-enter:nth-child(2).is-visible { animation-delay: 70ms; }
+.motion-enter:nth-child(3).is-visible { animation-delay: 140ms; }
+.motion-enter:nth-child(4).is-visible { animation-delay: 210ms; }
+.motion-enter:nth-child(5).is-visible { animation-delay: 280ms; }
+.motion-enter:nth-child(6).is-visible { animation-delay: 350ms; }
+.motion-enter:nth-child(7).is-visible { animation-delay: 420ms; }
+
+@keyframes settings-menu-in {
+  from {
+    opacity: 0;
+    transform: translateX(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.settings-menu-enter {
+  animation: settings-menu-in 220ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.settings-menu-backdrop {
+  animation: project-modal-backdrop-in 180ms ease-out both;
+}
+
+@keyframes gala-announcement-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gala-announcement {
+  animation: gala-announcement-in 320ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@keyframes project-modal-backdrop-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes project-modal-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.project-modal-backdrop {
+  animation: project-modal-backdrop-in 180ms ease-out both;
+}
+
+.project-modal-panel {
+  animation: project-modal-panel-in 220ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@keyframes logo-preview-in {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.logo-preview-backdrop {
+  animation: project-modal-backdrop-in 160ms ease-out both;
+}
+
+.logo-preview-panel {
+  animation: logo-preview-in 200ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+button,
+a[href],
+summary {
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease,
+    opacity 180ms ease;
+}
+
+button:not(:disabled):active {
+  scale: 0.98;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    opacity: 1 !important;
+    transform: none !important;
+    scale: 1 !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
