@@ -1,0 +1,73 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function isValidProject(data) {
+      return data.keys().hasAll(['id', 'name', 'logo', 'category', 'status', 'lifecycle', 'description', 'details', 'platform', 'highlights', 'createdAt'])
+        && data.id is string && data.id.size() <= 128
+        && data.name is string && data.name.size() <= 128
+        && data.logo is string && data.logo.size() <= 512
+        && data.category is string && data.category.size() <= 128
+        && data.status is string && data.status.size() <= 128
+        && data.lifecycle in ['active', 'transitioning', 'paused']
+        && data.description is string && data.description.size() <= 2048
+        && data.details is string && data.details.size() <= 5000
+        && data.platform is string && data.platform.size() <= 128
+        && data.highlights is list && data.highlights.size() <= 20
+        && data.createdAt is string && data.createdAt.size() <= 64;
+    }
+
+    function isValidGala(data) {
+      return data.keys().hasAll(['id', 'projectId', 'projectTitle', 'startsAt', 'status', 'createdAt'])
+        && data.id is string && data.id.size() <= 128
+        && data.projectId is string && data.projectId.size() <= 128
+        && data.projectTitle is string && data.projectTitle.size() <= 128
+        && data.startsAt is string && data.startsAt.size() <= 64
+        && data.status in ['scheduled', 'live', 'completed', 'cancelled']
+        && data.createdAt is string && data.createdAt.size() <= 64;
+    }
+
+    function isValidDevelopment(data) {
+      return data.keys().hasAll(['id', 'date', 'title', 'category', 'type', 'badge', 'summary', 'highlights', 'createdAt'])
+        && data.id is string && data.id.size() <= 128
+        && data.date is string && data.date.size() <= 64
+        && data.title is string && data.title.size() <= 256
+        && data.category is string && data.category.size() <= 128
+        && data.type in ['Milestone', 'Release', 'Research', 'Architecture', 'Benchmark']
+        && data.badge is string && data.badge.size() <= 64
+        && data.summary is string && data.summary.size() <= 2048
+        && data.highlights is list && data.highlights.size() <= 20
+        && data.createdAt is string && data.createdAt.size() <= 64;
+    }
+
+    match /projects/{projectId} {
+      allow read: if true;
+      allow create, update: if isValidId(projectId) && isValidProject(incoming());
+      allow delete: if isValidId(projectId);
+    }
+
+    match /galas/{galaId} {
+      allow read: if true;
+      allow create, update: if isValidId(galaId) && isValidGala(incoming());
+      allow delete: if isValidId(galaId);
+    }
+
+    match /developments/{developmentId} {
+      allow read: if true;
+      allow create, update: if isValidId(developmentId) && isValidDevelopment(incoming());
+      allow delete: if isValidId(developmentId);
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

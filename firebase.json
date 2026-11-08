@@ -1,0 +1,8 @@
+{
+  "firestore": {
+    "databaseId": "ai-studio-labsanticvalleyc-dba728c2-1f57-4ee0-beba-757390ef9351",
+    "rules": "firestore.rules",
+    "edition": "ENTERPRISE",
+    "dataAccessMode": "FIRESTORE_NATIVE"
+  }
+}

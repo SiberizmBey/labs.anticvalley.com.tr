@@ -7,7 +7,7 @@ interface MobileBottomNavProps {
 
 export const MobileBottomNav = ({
   activeSection,
-  onNavigate
+  onNavigate,
 }: MobileBottomNavProps) => {
   const items = [
     { id: 'projects', label: 'Projeler', icon: GitBranch },

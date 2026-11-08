@@ -1,9 +1,14 @@
 import { useState } from "react";
-import { projects } from "../data/projects";
-import { Project } from "../data/projects";
+import { projects as defaultProjects, Project } from "../data/projects";
 import { ProjectDetailsModal } from "./ProjectDetailsModal";
 
-export const ActiveProjectsDock = () => {
+interface ActiveProjectsDockProps {
+    projects?: Project[];
+}
+
+export const ActiveProjectsDock = ({
+    projects = defaultProjects,
+}: ActiveProjectsDockProps = {}) => {
     const [selectedProject, setSelectedProject] = useState<Project | null>(
         null,
     );

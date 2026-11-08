@@ -85,6 +85,7 @@ export interface LabDevelopment {
   highlights: string[];
   badge: string;
   relatedExperimentCode?: string;
+  createdAt?: string;
 }
 
 // Backwards compatibility alias for components

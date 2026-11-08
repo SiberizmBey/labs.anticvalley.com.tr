@@ -10,6 +10,21 @@ interface ProjectLogoPreviewProps {
     imageClassName?: string;
 }
 
+const normalizeLogoSrc = (input: string) => {
+    if (!input || typeof input !== "string") return "/assets/img/anticvalley.png";
+    const trimmed = input.trim();
+    if (
+        trimmed.startsWith("http://") ||
+        trimmed.startsWith("https://") ||
+        trimmed.startsWith("data:")
+    ) {
+        return trimmed;
+    }
+    if (trimmed.startsWith("/")) return trimmed;
+    if (trimmed.startsWith("assets/")) return `/${trimmed}`;
+    return `/assets/img/${trimmed}`;
+};
+
 export const ProjectLogoPreview = ({
     src,
     alt,
@@ -18,6 +33,11 @@ export const ProjectLogoPreview = ({
     imageClassName = "",
 }: ProjectLogoPreviewProps) => {
     const [isOpen, setIsOpen] = useState(false);
+    const [imgSrc, setImgSrc] = useState(() => normalizeLogoSrc(src));
+
+    useEffect(() => {
+        setImgSrc(normalizeLogoSrc(src));
+    }, [src]);
 
     useEffect(() => {
         if (!isOpen) return;
@@ -49,8 +69,9 @@ export const ProjectLogoPreview = ({
                 className={`project-logo-trigger group/logo relative flex items-center justify-center overflow-hidden ${className}`}
             >
                 <img
-                    src={src}
+                    src={imgSrc}
                     alt={alt}
+                    onError={() => setImgSrc("/assets/img/anticvalley.png")}
                     className={`h-full w-full object-contain ${imageClassName}`}
                     loading="lazy"
                 />
@@ -81,8 +102,9 @@ export const ProjectLogoPreview = ({
                                 <X className="h-5 w-5" />
                             </button>
                             <img
-                                src={src}
+                                src={imgSrc}
                                 alt={alt}
+                                onError={() => setImgSrc("/assets/img/anticvalley.png")}
                                 className="h-full w-full object-contain mix-blend-screen"
                             />
                         </section>

@@ -1,8 +1,1 @@
-{
-  "name": "Labs Antic Valley",
-  "description": "Antic Valley yeni nesil yapay zeka deneyleri, algoritmik prototipler ve interaktif teknoloji laboratuvarı",
-  "requestFramePermissions": [],
-  "majorCapabilities": [
-    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
-  ]
-}
+{"name":"labs.anticvalley.com.tr","description":"Antic Valley yeni nesil yapay zeka deneyleri, algoritmik prototipler ve interaktif teknoloji laboratuvarı","requestFramePermissions":[],"majorCapabilities":["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]}

@@ -36,7 +36,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
                         setIsDetailsOpen(true);
                     }
                 }}
-                className="motion-enter group scroll-mt-24 cursor-pointer rounded-2xl bg-[var(--bg-card)] border border-[var(--border-card)] hover:border-[var(--border-hover)] p-5 transition-all duration-200 flex flex-col shadow-xs hover:shadow-md hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--accent)]"
+                className="group scroll-mt-24 cursor-pointer rounded-2xl bg-[var(--bg-card)] border border-[var(--border-card)] hover:border-[var(--border-hover)] p-5 transition-all duration-200 flex flex-col shadow-xs hover:shadow-md hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--accent)]"
             >
                 <div className="flex items-start justify-between gap-3">
                     <ProjectLogoPreview

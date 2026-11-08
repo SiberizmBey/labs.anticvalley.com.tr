@@ -12,14 +12,22 @@ import {
 } from "lucide-react";
 import { useTheme, ThemePreference } from "../context/ThemeContext";
 
+import { Project } from "../data/projects";
+import { ProjectGalaItem } from "../services/galaService";
+import { GalaDynamicIsland } from "./GalaDynamicIsland";
+
 interface HeaderCapsuleProps {
     activeSection: string;
     onNavigate: (sectionId: string) => void;
+    galas?: ProjectGalaItem[];
+    projects?: Project[];
 }
 
 export const HeaderCapsule = ({
     activeSection,
     onNavigate,
+    galas,
+    projects,
 }: HeaderCapsuleProps) => {
     const [settingsOpen, setSettingsOpen] = useState(false);
     const {
@@ -106,7 +114,7 @@ export const HeaderCapsule = ({
                     >
                         <div className="w-8 h-8 rounded-full overflow-hidden flex items-center justify-center group-hover:scale-105 transition-transform">
                             <img
-                                src="./assets/img/favicon.png"
+                                src="/assets/img/anticvalley.png"
                                 alt="Antic Valley Logo"
                                 className="w-full h-full object-cover"
                             />
@@ -145,8 +153,11 @@ export const HeaderCapsule = ({
                     })}
                 </nav>
 
-                {/* Right Capsules: Settings & GitHub */}
+                {/* Right Capsules: Gala Dynamic Island & Settings */}
                 <div className="pointer-events-auto flex items-center gap-2 relative">
+                    {/* Gala Dynamic Island (Immediately to the left of Ayarlar) */}
+                    <GalaDynamicIsland galas={galas} projects={projects} />
+
                     {/* Settings Capsule (Theme & Appearance Menu) */}
                     <div ref={settingsRef} className="relative">
                         <button

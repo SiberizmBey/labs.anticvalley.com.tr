@@ -1,15 +1,21 @@
-import { projects } from "../data/projects";
+import { projects as defaultProjects, Project } from "../data/projects";
 import { ProjectCard } from "./ProjectCard";
 
-export const ProjectsSection = () => {
-    const activeProjects = projects.filter(
-        (project) => project.lifecycle === "active",
-    );
+interface ProjectsSectionProps {
+    projects?: Project[];
+}
+
+export const ProjectsSection = ({
+    projects = defaultProjects,
+}: ProjectsSectionProps = {}) => {
     const transitioningProjects = projects.filter(
         (project) => project.lifecycle === "transitioning",
     );
     const pausedProjects = projects.filter(
         (project) => project.lifecycle === "paused",
+    );
+    const activeProjects = projects.filter(
+        (project) => project.lifecycle !== "transitioning" && project.lifecycle !== "paused",
     );
 
     return (

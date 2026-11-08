@@ -10,6 +10,9 @@ export interface Project {
     platform: string;
     highlights: string[];
     safetyNotice?: string;
+    hideUntilGala?: boolean;
+    galaStartsAt?: string;
+    galaId?: string;
 }
 
 export const projects: Project[] = [

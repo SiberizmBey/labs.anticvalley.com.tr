@@ -2,6 +2,9 @@ node_modules/
 dist/
 build/
 coverage/
+.agents/
+.antigravity/
+.vscode/
 
 .env
 .env.*

@@ -1,0 +1,75 @@
+{
+  "entities": {
+    "Project": {
+      "title": "Project",
+      "description": "Antic Valley laboratuvar projeleri ve deneysel yazılımlar",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "name": { "type": "string", "maxLength": 128 },
+        "logo": { "type": "string", "maxLength": 512 },
+        "category": { "type": "string", "maxLength": 128 },
+        "status": { "type": "string", "maxLength": 128 },
+        "lifecycle": { "type": "string", "enum": ["active", "transitioning", "paused"] },
+        "description": { "type": "string", "maxLength": 2048 },
+        "details": { "type": "string", "maxLength": 5000 },
+        "platform": { "type": "string", "maxLength": 128 },
+        "highlights": { "type": "array" },
+        "safetyNotice": { "type": "string", "maxLength": 1024 },
+        "hideUntilGala": { "type": "boolean" },
+        "galaStartsAt": { "type": "string", "maxLength": 64 },
+        "galaId": { "type": "string", "maxLength": 128 },
+        "createdAt": { "type": "string", "maxLength": 64 }
+      },
+      "required": ["id", "name", "logo", "category", "status", "lifecycle", "description", "details", "platform", "highlights", "createdAt"]
+    },
+    "Gala": {
+      "title": "Gala",
+      "description": "Proje tanıtım ve canlı yayın galaları",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "projectId": { "type": "string", "maxLength": 128 },
+        "projectTitle": { "type": "string", "maxLength": 128 },
+        "startsAt": { "type": "string", "maxLength": 64 },
+        "endsAt": { "type": "string", "maxLength": 64 },
+        "youtubeLiveUrl": { "type": "string", "maxLength": 512 },
+        "description": { "type": "string", "maxLength": 2048 },
+        "status": { "type": "string", "enum": ["scheduled", "live", "completed", "cancelled"] },
+        "createdAt": { "type": "string", "maxLength": 64 }
+      },
+      "required": ["id", "projectId", "projectTitle", "startsAt", "status", "createdAt"]
+    },
+    "Development": {
+      "title": "Development",
+      "description": "Günlük proje notları ve laboratuvar gelişmeleri",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "date": { "type": "string", "maxLength": 64 },
+        "title": { "type": "string", "maxLength": 256 },
+        "category": { "type": "string", "maxLength": 128 },
+        "type": { "type": "string", "enum": ["Milestone", "Release", "Research", "Architecture", "Benchmark"] },
+        "badge": { "type": "string", "maxLength": 64 },
+        "summary": { "type": "string", "maxLength": 2048 },
+        "highlights": { "type": "array" },
+        "createdAt": { "type": "string", "maxLength": 64 }
+      },
+      "required": ["id", "date", "title", "category", "type", "badge", "summary", "highlights", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/projects/{projectId}": {
+      "schema": "Project",
+      "description": "Antic Valley yayınlanan proje kayıtları"
+    },
+    "/galas/{galaId}": {
+      "schema": "Gala",
+      "description": "Proje gala ve canlı lansman kayıtları"
+    },
+    "/developments/{developmentId}": {
+      "schema": "Development",
+      "description": "Laboratuvar gelişmeler ve sürüm notları"
+    }
+  }
+}
