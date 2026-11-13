@@ -83,4 +83,25 @@ export const labDevelopments: LabDevelopment[] = [
         ],
         badge: "ÜRÜN DEVRİ",
     },
+
+    {
+        id: "dev-engerek-end",
+        date: "1 Kasım 2026",
+        title: "Engerek serüvenine veda etti",
+        category: "Engerek",
+        type: "Milestone",
+        summary: "Serüven sona erdi",
+        highlights: ["Engerek kısa süreli serüvenine veda etti."],
+        badge: "ÜRÜN DURDURULDU",
+    },
+    {
+        id: "dev-ahtapot-end",
+        date: "1 Kasım 2026",
+        title: "Ahtapot serüvenine veda etti",
+        category: "Ahtapot",
+        type: "Milestone",
+        summary: "Serüven sona erdi",
+        highlights: ["Ahtapot kısa süreli serüvenine veda etti."],
+        badge: "ÜRÜN DURDURULDU",
+    },
 ];
