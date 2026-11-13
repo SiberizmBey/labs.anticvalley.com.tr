@@ -2,6 +2,32 @@ import { LabDevelopment } from "../types";
 
 export const labDevelopments: LabDevelopment[] = [
     {
+        id: "dev-koza-visualtion-1",
+        date: "13 Kasım 2026",
+        title: "Koza'nın ayarlar sayfasına yeni görsel efekt düzenlemeleri eklendi. Artık Gama, Windows 11 ve Windows 10 tarzı köşe yumuşatmaları tercih edilebiliyor.",
+        category: "Koza",
+        type: "Milestone",
+        summary: "Koza'nın ayarlar sayfasına yeni görselleştirmeler eklendi.",
+        highlights: [
+            "Daha kararlı kullanım hedeflendi.",
+            "Ekosisteme erişim kolaylığı hedeflendi.",
+        ],
+        badge: "KAPALI TEST",
+    },
+    {
+        id: "dev-koza-visualtion",
+        date: "13 Kasım 2026",
+        title: "Koza'nın ayarlar sayfasına yeni görselleştirmeler eklendi.",
+        category: "Koza",
+        type: "Milestone",
+        summary: "Koza'nın ayarlar sayfasına yeni görselleştirmeler eklendi.",
+        highlights: [
+            "Daha kararlı kullanım hedeflendi.",
+            "Ekosisteme erişim kolaylığı hedeflendi.",
+        ],
+        badge: "KAPALI TEST",
+    },
+    {
         id: "dev-lir-stability",
         date: "8 Kasım 2026",
         title: "Lir'in kararlılığı artırıldı",
