@@ -114,7 +114,7 @@ export const HeaderCapsule = ({
                     >
                         <div className="w-8 h-8 rounded-full overflow-hidden flex items-center justify-center group-hover:scale-105 transition-transform">
                             <img
-                                src="/assets/img/anticvalley.png"
+                                src="/assets/img/favicon.png"
                                 alt="Antic Valley Logo"
                                 className="w-full h-full object-cover"
                             />
@@ -198,161 +198,172 @@ export const HeaderCapsule = ({
                                     className="settings-menu-enter fixed right-0 top-0 z-[70] h-[100dvh] w-[min(22rem,100vw)] overflow-y-auto rounded-l-3xl border-y border-l border-[var(--border-card)] bg-[var(--bg-modal)] p-5 shadow-2xl backdrop-blur-xl"
                                 >
                                     <div className="space-y-4">
-                                <div className="flex items-center justify-between pb-2.5 border-b border-[var(--border-subtle)]">
-                                    <div className="flex items-center gap-2">
-                                        <Settings className="w-4 h-4 text-[var(--accent)]" />
-                                        <span
-                                            id="settings-menu-title"
-                                            className="font-bold text-xs sm:text-sm text-[var(--text-primary)]"
-                                        >
-                                            Görünüm menüsü
-                                        </span>
-                                    </div>
-                                    <button
-                                        onClick={() => setSettingsOpen(false)}
-                                        aria-label="Ayarlar menüsünü kapat"
-                                        className="p-1 rounded-full text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-inner)] transition-colors"
-                                    >
-                                        <X className="w-3.5 h-3.5" />
-                                    </button>
-                                </div>
-
-                                <div className="space-y-1.5">
-                                    <div className="text-[11px] font-semibold uppercase tracking-wider text-[var(--text-muted)] px-1">
-                                        Tema
-                                    </div>
-
-                                    <div className="grid grid-cols-3 gap-1 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-inner)] p-1">
-                                        {themeOptions.map((opt) => {
-                                            const Icon = opt.icon;
-                                            const isCurrent =
-                                                themePreference === opt.id;
-                                            return (
-                                                <button
-                                                    key={opt.id}
-                                                    id={`setting-theme-${opt.id}`}
-                                                    onClick={() =>
-                                                        setThemePreference(
-                                                            opt.id,
-                                                        )
-                                                    }
-                                                    title={opt.desc}
-                                                    className={`flex flex-col items-center justify-center gap-1 rounded-lg px-2 py-2 text-[11px] font-semibold transition-colors ${
-                                                        isCurrent
-                                                            ? "bg-[var(--btn-primary-bg)] text-[var(--btn-primary-text)] shadow-xs"
-                                                            : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
-                                                    }`}
+                                        <div className="flex items-center justify-between pb-2.5 border-b border-[var(--border-subtle)]">
+                                            <div className="flex items-center gap-2">
+                                                <Settings className="w-4 h-4 text-[var(--accent)]" />
+                                                <span
+                                                    id="settings-menu-title"
+                                                    className="font-bold text-xs sm:text-sm text-[var(--text-primary)]"
                                                 >
-                                                    <Icon className="h-4 w-4" />
-                                                    <span>{opt.label}</span>
-                                                </button>
-                                            );
-                                        })}
-                                    </div>
-                                </div>
+                                                    Görünüm menüsü
+                                                </span>
+                                            </div>
+                                            <button
+                                                onClick={() =>
+                                                    setSettingsOpen(false)
+                                                }
+                                                aria-label="Ayarlar menüsünü kapat"
+                                                className="p-1 rounded-full text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-inner)] transition-colors"
+                                            >
+                                                <X className="w-3.5 h-3.5" />
+                                            </button>
+                                        </div>
 
-                                {themePreference !== "light" && (
-                                    <div className="flex items-center justify-between gap-3 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-inner)] px-3 py-2.5">
-                                        <div className="flex items-center gap-2.5">
-                                            <Zap className="h-4 w-4 text-[var(--accent)]" />
-                                            <div>
-                                                <div className="text-xs font-semibold text-[var(--text-primary)]">
-                                                    AMOLED koyu mod
-                                                </div>
-                                                <div className="text-[11px] text-[var(--text-secondary)]">
-                                                    Saf siyah arka plan
-                                                </div>
+                                        <div className="space-y-1.5">
+                                            <div className="text-[11px] font-semibold uppercase tracking-wider text-[var(--text-muted)] px-1">
+                                                Tema
+                                            </div>
+
+                                            <div className="grid grid-cols-3 gap-1 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-inner)] p-1">
+                                                {themeOptions.map((opt) => {
+                                                    const Icon = opt.icon;
+                                                    const isCurrent =
+                                                        themePreference ===
+                                                        opt.id;
+                                                    return (
+                                                        <button
+                                                            key={opt.id}
+                                                            id={`setting-theme-${opt.id}`}
+                                                            onClick={() =>
+                                                                setThemePreference(
+                                                                    opt.id,
+                                                                )
+                                                            }
+                                                            title={opt.desc}
+                                                            className={`flex flex-col items-center justify-center gap-1 rounded-lg px-2 py-2 text-[11px] font-semibold transition-colors ${
+                                                                isCurrent
+                                                                    ? "bg-[var(--btn-primary-bg)] text-[var(--btn-primary-text)] shadow-xs"
+                                                                    : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
+                                                            }`}
+                                                        >
+                                                            <Icon className="h-4 w-4" />
+                                                            <span>
+                                                                {opt.label}
+                                                            </span>
+                                                        </button>
+                                                    );
+                                                })}
                                             </div>
                                         </div>
-                                        <button
-                                            type="button"
-                                            role="switch"
-                                            aria-checked={darkTheme === "amoled"}
-                                            aria-label="AMOLED koyu modu"
-                                            onClick={() =>
-                                                setDarkTheme(
-                                                    darkTheme === "amoled"
-                                                        ? "dark"
-                                                        : "amoled",
-                                                )
-                                            }
-                                            className={`relative h-6 w-11 shrink-0 rounded-full transition-colors ${
-                                                darkTheme === "amoled"
-                                                    ? "bg-[var(--accent)]"
-                                                    : "bg-[var(--border-hover)]"
-                                            }`}
-                                        >
-                                            <span
-                                                className={`absolute top-0.5 h-5 w-5 rounded-full bg-white shadow transition-transform ${
-                                                    darkTheme === "amoled"
-                                                        ? "translate-x-[1.375rem]"
-                                                        : "translate-x-0.5"
-                                                }`}
-                                            />
-                                        </button>
-                                    </div>
-                                )}
 
-                                <div className="space-y-2">
-                                    <div className="flex items-center justify-between px-1">
-                                        <div className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-[var(--text-muted)]">
-                                            <Palette className="h-3.5 w-3.5" />
-                                            Vurgu rengi
+                                        {themePreference !== "light" && (
+                                            <div className="flex items-center justify-between gap-3 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-inner)] px-3 py-2.5">
+                                                <div className="flex items-center gap-2.5">
+                                                    <Zap className="h-4 w-4 text-[var(--accent)]" />
+                                                    <div>
+                                                        <div className="text-xs font-semibold text-[var(--text-primary)]">
+                                                            AMOLED koyu mod
+                                                        </div>
+                                                        <div className="text-[11px] text-[var(--text-secondary)]">
+                                                            Saf siyah arka plan
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <button
+                                                    type="button"
+                                                    role="switch"
+                                                    aria-checked={
+                                                        darkTheme === "amoled"
+                                                    }
+                                                    aria-label="AMOLED koyu modu"
+                                                    onClick={() =>
+                                                        setDarkTheme(
+                                                            darkTheme ===
+                                                                "amoled"
+                                                                ? "dark"
+                                                                : "amoled",
+                                                        )
+                                                    }
+                                                    className={`relative h-6 w-11 shrink-0 rounded-full transition-colors ${
+                                                        darkTheme === "amoled"
+                                                            ? "bg-[var(--accent)]"
+                                                            : "bg-[var(--border-hover)]"
+                                                    }`}
+                                                >
+                                                    <span
+                                                        className={`absolute top-0.5 h-5 w-5 rounded-full bg-white shadow transition-transform ${
+                                                            darkTheme ===
+                                                            "amoled"
+                                                                ? "translate-x-[1.375rem]"
+                                                                : "translate-x-0.5"
+                                                        }`}
+                                                    />
+                                                </button>
+                                            </div>
+                                        )}
+
+                                        <div className="space-y-2">
+                                            <div className="flex items-center justify-between px-1">
+                                                <div className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-[var(--text-muted)]">
+                                                    <Palette className="h-3.5 w-3.5" />
+                                                    Vurgu rengi
+                                                </div>
+                                                <span className="font-mono text-[11px] text-[var(--text-secondary)]">
+                                                    {accentColor.toUpperCase()}
+                                                </span>
+                                            </div>
+                                            <div className="flex flex-wrap items-center gap-2">
+                                                {accentPresets.map((preset) => (
+                                                    <button
+                                                        key={preset.color}
+                                                        type="button"
+                                                        onClick={() =>
+                                                            setAccentColor(
+                                                                preset.color,
+                                                            )
+                                                        }
+                                                        aria-label={`${preset.name} vurgu rengini seç`}
+                                                        aria-pressed={
+                                                            accentColor.toLowerCase() ===
+                                                            preset.color.toLowerCase()
+                                                        }
+                                                        title={preset.name}
+                                                        className={`h-7 w-7 rounded-full border-2 transition-transform hover:scale-110 ${
+                                                            accentColor.toLowerCase() ===
+                                                            preset.color.toLowerCase()
+                                                                ? "border-[var(--text-primary)] ring-2 ring-[var(--accent-border)]"
+                                                                : "border-[var(--border-card)]"
+                                                        }`}
+                                                        style={{
+                                                            backgroundColor:
+                                                                preset.color,
+                                                        }}
+                                                    />
+                                                ))}
+                                                <label
+                                                    title="Özel vurgu rengi seç"
+                                                    className="relative flex h-7 w-7 cursor-pointer items-center justify-center overflow-hidden rounded-full border-2 border-[var(--border-card)] bg-[conic-gradient(red,yellow,lime,aqua,blue,magenta,red)]"
+                                                >
+                                                    <input
+                                                        type="color"
+                                                        value={accentColor}
+                                                        onChange={(event) =>
+                                                            setAccentColor(
+                                                                event.target
+                                                                    .value,
+                                                            )
+                                                        }
+                                                        aria-label="Özel vurgu rengi"
+                                                        className="absolute inset-0 h-full w-full cursor-pointer opacity-0"
+                                                    />
+                                                </label>
+                                            </div>
                                         </div>
-                                        <span className="font-mono text-[11px] text-[var(--text-secondary)]">
-                                            {accentColor.toUpperCase()}
-                                        </span>
-                                    </div>
-                                    <div className="flex flex-wrap items-center gap-2">
-                                        {accentPresets.map((preset) => (
-                                            <button
-                                                key={preset.color}
-                                                type="button"
-                                                onClick={() =>
-                                                    setAccentColor(preset.color)
-                                                }
-                                                aria-label={`${preset.name} vurgu rengini seç`}
-                                                aria-pressed={
-                                                    accentColor.toLowerCase() ===
-                                                    preset.color.toLowerCase()
-                                                }
-                                                title={preset.name}
-                                                className={`h-7 w-7 rounded-full border-2 transition-transform hover:scale-110 ${
-                                                    accentColor.toLowerCase() ===
-                                                    preset.color.toLowerCase()
-                                                        ? "border-[var(--text-primary)] ring-2 ring-[var(--accent-border)]"
-                                                        : "border-[var(--border-card)]"
-                                                }`}
-                                                style={{
-                                                    backgroundColor:
-                                                        preset.color,
-                                                }}
-                                            />
-                                        ))}
-                                        <label
-                                            title="Özel vurgu rengi seç"
-                                            className="relative flex h-7 w-7 cursor-pointer items-center justify-center overflow-hidden rounded-full border-2 border-[var(--border-card)] bg-[conic-gradient(red,yellow,lime,aqua,blue,magenta,red)]"
-                                        >
-                                            <input
-                                                type="color"
-                                                value={accentColor}
-                                                onChange={(event) =>
-                                                    setAccentColor(
-                                                        event.target.value,
-                                                    )
-                                                }
-                                                aria-label="Özel vurgu rengi"
-                                                className="absolute inset-0 h-full w-full cursor-pointer opacity-0"
-                                            />
-                                        </label>
-                                    </div>
-                                </div>
                                     </div>
                                 </section>
                             </>
                         )}
                     </div>
-
                 </div>
             </div>
         </header>
