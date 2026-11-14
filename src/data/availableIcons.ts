@@ -55,8 +55,8 @@ export const availableIcons: AvailableIcon[] = [
         description: "Ses pad, OCR ve müzik entegrasyonu",
     },
     {
-        id: "mfgi",
-        name: "MFGI",
+        id: "yonga",
+        name: "Yonga",
         path: "/assets/img/mfgi.png",
         description: "Multi Frame Generation ve oyun optimizasyonu",
     },

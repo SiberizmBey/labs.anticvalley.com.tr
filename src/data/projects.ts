@@ -60,10 +60,7 @@ export const projects: Project[] = [
         details:
             "Ahtapot, hesap parolalarını yönetmek için geliştirildi. Parola yönetim sistemi Koza'ya aktarılıyor; Koza bu özellikleri Engerek'in güvenli kasa altyapısı ve hesap kurtarma bilgileriyle birleştiriyor.",
         platform: "Electron masaüstü uygulaması",
-        highlights: [
-            "Parola yönetimi",
-            "Parola yönetimi Koza'ya devrediliyor",
-        ],
+        highlights: ["Parola yönetimi", "Parola yönetimi Koza'ya devrediliyor"],
     },
     {
         id: "nexaverse",
@@ -77,7 +74,10 @@ export const projects: Project[] = [
         details:
             "NexaVerse; klasik bir forumdan daha geniş bir deneyim sunmayı hedefleyen siber şehir projesi. Geliştirme çalışmaları şu an için süresiz olarak askıya alınmış durumda.",
         platform: "Electron masaüstü uygulaması",
-        highlights: ["Siber şehir konsepti", "Geliştirme süreci süresiz askıda"],
+        highlights: [
+            "Siber şehir konsepti",
+            "Geliştirme süreci süresiz askıda",
+        ],
     },
     {
         id: "kirpi",
@@ -147,8 +147,8 @@ export const projects: Project[] = [
         ],
     },
     {
-        id: "mfgi",
-        name: "MFGI",
+        id: "yonga",
+        name: "Yonga",
         logo: "/assets/img/mfgi.png",
         category: "Oyun & Görüntü",
         status: "Geliştiriliyor",
@@ -156,7 +156,7 @@ export const projects: Project[] = [
         description:
             "Multi Frame Generation DLL'ini oyunlara entegre etmeyi ve oyunları uygulama içinden başlatmayı amaçlayan bir yazılım.",
         details:
-            "MFGI, Multi Frame Generation DLL entegrasyonunu ve oyun başlatıcısını tek bir uygulamada buluşturur. Özelliği öncelikle çevrimdışı oyunlarda denemeniz önerilir.",
+            "Yonga, Multi Frame Generation DLL entegrasyonunu ve oyun başlatıcısını tek bir uygulamada buluşturur. Özelliği öncelikle çevrimdışı oyunlarda denemeniz önerilir.",
         safetyNotice:
             "DLL enjeksiyonu oyun dosyalarına müdahale eder. Çevrimiçi oyunlarda oyunun kurallarına veya anti-hile sistemlerine takılabilir ve hesabınızın yasaklanmasına yol açabilir. Çevrimiçi oyunlarda kullanmayın; oyunun kullanım koşullarını önceden kontrol edin.",
         platform: "Masaüstü oyun başlatıcısı",
