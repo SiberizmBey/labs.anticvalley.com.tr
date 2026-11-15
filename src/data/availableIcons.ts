@@ -13,6 +13,12 @@ export const availableIcons: AvailableIcon[] = [
         description: "Ana laboratuvar ve çatı marka logosu",
     },
     {
+        id: "anticstore",
+        name: "Antic Store",
+        path: "/assets/img/anticstore.png",
+        description: "Mağaza logosu",
+    },
+    {
         id: "ahtapot",
         name: "Ahtapot",
         path: "/assets/img/ahtapot.png",
