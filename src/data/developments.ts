@@ -2,6 +2,16 @@ import { LabDevelopment } from "../types";
 
 export const labDevelopments: LabDevelopment[] = [
     {
+        id: "rel-lir-1",
+        date: "15 Kasım 2026",
+        title: "Lir, yayınlandı",
+        category: "Lir",
+        type: "Milestone",
+        summary: "Lir, açık kaynaklı bir ses pad uygulaması olarak yayınlandı.",
+        highlights: ["Serüven başladı"],
+        badge: "YAYINLANDI",
+    },
+    {
         id: "dev-koza-visualtion-1",
         date: "13 Kasım 2026",
         title: "Koza'nın ayarlar sayfasına yeni görsel efekt düzenlemeleri eklendi. Artık Gama, Windows 11 ve Windows 10 tarzı köşe yumuşatmaları tercih edilebiliyor.",
