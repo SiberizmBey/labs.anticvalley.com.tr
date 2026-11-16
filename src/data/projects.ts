@@ -33,7 +33,7 @@ export const projects: Project[] = [
     {
         id: "koru",
         name: "Koru",
-        logo: "/assets/img/Koru.png",
+        logo: "/assets/img/koru.png",
         category: "Mağaza",
         status: "Geliştiriliyor",
         lifecycle: "active",
