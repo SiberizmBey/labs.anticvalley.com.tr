@@ -31,6 +31,20 @@ export const projects: Project[] = [
         highlights: ["Şifreli not saklama", "Güvenli kasa yaklaşımı"],
     },
     {
+        id: "koru",
+        name: "Koru",
+        logo: "/assets/img/Koru.png",
+        category: "Mağaza",
+        status: "Geliştiriliyor",
+        lifecycle: "active",
+        description:
+            "Antic Valley'in resmi uygulama dağıtım ve güncelleştirme platformu",
+        details:
+            "Antic Valley'in resmi uygulama dağıtım ve güncelleştirme platformu. Koru, Antic Valley uygulamalarını tek bir yerden yönetmeyi hedefliyor.",
+        platform: "Electron masaüstü uygulaması",
+        highlights: ["Resmi Mağaza", "Otomatik güncelleştirme"],
+    },
+    {
         id: "koza",
         name: "Koza",
         logo: "/assets/img/koza.png",
